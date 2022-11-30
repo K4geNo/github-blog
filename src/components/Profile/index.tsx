@@ -1,6 +1,6 @@
+import { FaExternalLinkAlt, FaGithub, FaUserFriends } from "react-icons/fa"
 import { useEffect, useState } from "react"
 
-import { FaExternalLinkAlt } from "react-icons/fa"
 import Link from "next/link"
 import axios from "axios"
 
@@ -10,6 +10,8 @@ interface User {
     name: string
     avatar_url: string
     bio: string
+    login: string
+    followers: number
 }
 
 export function Profile() {
@@ -59,12 +61,25 @@ export function Profile() {
                         </Link>
                     </div>
 
-                    <p className="font-nunito text-base-text">{user?.bio}</p>
+                    <p className="font-nunito font-normal text-base-text">
+                        {user?.bio}
+                    </p>
 
-                    <div className="mt-6 flex gap-6 text-base-subtitle">
-                        <p>icon 1</p>
-                        <p>icon 2</p>
-                        <p>icon 3</p>
+                    <div className="mt-7 flex gap-6 text-base-subtitle">
+                        <div className="flex items-center gap-2">
+                            <FaGithub size={18} className="text-base-label" />
+                            <p className="font-nunito">{user?.login}</p>
+                        </div>
+
+                        <div className="flex items-center gap-2">
+                            <FaUserFriends
+                                size={18}
+                                className="text-base-label"
+                            />
+                            <p className="font-nunito">
+                                {user?.followers} seguidores
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
