@@ -7,7 +7,7 @@ export function Header() {
             <Image
                 src={logoGithub}
                 alt="Github Logo"
-                className="-mt-28 h-24 w-[9.25rem]"
+                className="-mt-10 h-24 w-[9.25rem]"
             />
         </header>
     )

@@ -8,7 +8,7 @@ export default function Layout({ children }: Props) {
     return (
         <>
             <Header />
-            <main className="h-screen bg-base-background">{children}</main>
+            <main className="min-h-screen bg-base-background">{children}</main>
         </>
     )
 }
