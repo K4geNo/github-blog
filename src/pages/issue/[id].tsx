@@ -1,7 +1,7 @@
 import { GetStaticPaths, GetStaticProps } from "next"
 
 import { IIssue } from "@/interface/issue"
-import { IssueHeader } from "./components/IssueHeader/index"
+import { IssueHeader } from "@/components/IssueHeader"
 import ReactMarkdown from "react-markdown"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import { api } from "@/lib/axios"
@@ -16,13 +16,7 @@ export default function Issue({ issue }: IssueProps) {
         <div className="mx-auto flex w-full max-w-[54rem] flex-col items-center justify-center">
             <IssueHeader issue={issue} />
 
-            <section
-                className={`${
-                    issue.body.length > 1000
-                        ? "mb-12 flex flex-col gap-4 px-8 py-10 font-nunito text-base-text"
-                        : "flex flex-col gap-4 px-8 py-10 font-nunito text-base-text"
-                }`}
-            >
+            <section className="mb-12 flex flex-col gap-4 px-4 py-10 font-nunito text-base-text sm:px-8">
                 <ReactMarkdown
                     children={issue.body}
                     components={{
@@ -58,7 +52,7 @@ export const getStaticProps: GetStaticProps<any, { id: string }> = async ({
     const issueNumber = params?.id
 
     const { data } = await api.get(
-        `/repos/GBDev13/blog-posts/issues/${issueNumber}`
+        `/repos/K4geNo/github-blog/issues/${issueNumber}`
     )
 
     return {

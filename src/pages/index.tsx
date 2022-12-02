@@ -6,8 +6,8 @@ import { Profile } from "@/components/Profile"
 import { Spinner } from "@/components/Spinner"
 import { api } from "@/lib/axios"
 
-const username = "GBDev13"
-const repository = "blog-posts"
+const username = "K4geNo"
+const repository = "github-blog"
 
 export interface Issue {
     title: string
@@ -55,7 +55,7 @@ export default function Home() {
                     <Spinner />
                 </div>
             ) : (
-                <div className="mt-12 mb-16 grid w-full grid-cols-2 gap-8">
+                <div className="mt-12 mb-16 grid w-full grid-cols-1 gap-8 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2">
                     {issues.map((issue) => (
                         <Issues key={issue.number} issue={issue} />
                     ))}

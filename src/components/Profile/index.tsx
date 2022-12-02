@@ -40,16 +40,16 @@ export function Profile() {
             {isLoading ? (
                 <Spinner />
             ) : (
-                <div className="flex w-full gap-8">
+                <div className="flex w-full flex-col gap-8 sm:flex-row md:flex-row">
                     <img
                         src={user ? user.avatar_url : ""}
                         alt=""
-                        className="h-[148px] w-[148px] rounded-md"
+                        className="h-full w-full rounded-md sm:h-[148px] sm:w-[148px]"
                     />
 
                     <div className="flex w-full flex-col gap-2">
                         <div className="flex w-full items-center justify-between">
-                            <h1 className="font-nunito text-2xl font-bold text-base-title">
+                            <h1 className="font-nunito text-xl font-bold text-base-title sm:text-2xl">
                                 {user?.name}
                             </h1>
 
@@ -69,7 +69,7 @@ export function Profile() {
                             </Link>
                         </div>
 
-                        <p className="font-nunito font-normal text-base-text">
+                        <p className="font-nunito text-sm font-normal text-base-text sm:text-base">
                             {user?.bio}
                         </p>
 
@@ -79,7 +79,9 @@ export function Profile() {
                                     size={18}
                                     className="text-base-label"
                                 />
-                                <p className="font-nunito">{user?.login}</p>
+                                <p className="font-nunito text-sm sm:text-base">
+                                    {user?.login}
+                                </p>
                             </div>
 
                             <div className="flex items-center gap-2">
@@ -87,7 +89,7 @@ export function Profile() {
                                     size={18}
                                     className="text-base-label"
                                 />
-                                <p className="font-nunito">
+                                <p className="font-nunito text-sm sm:text-base">
                                     {user?.followers} seguidores
                                 </p>
                             </div>

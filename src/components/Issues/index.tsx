@@ -16,8 +16,8 @@ export function Issues({ issue }: IssueProps) {
             border-base-post bg-base-post p-8 text-white transition
             hover:border-base-label"
         >
-            <div className="flex justify-between gap-4">
-                <strong className="flex-1 font-nunito text-xl font-bold leading-8">
+            <div className="flex flex-col-reverse justify-between gap-4 sm:flex-row">
+                <strong className="flex-1 font-nunito text-lg font-bold leading-8 sm:text-xl">
                     {issue.title}
                 </strong>
 
